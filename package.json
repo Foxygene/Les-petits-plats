@@ -1,0 +1,22 @@
+{
+  "name": "lespetitsplats",
+  "version": "1.0.0",
+  "description": "Recipe searching website",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foxygene/Les-petits-plats.git"
+  },
+  "author": "Foxygene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Foxygene/Les-petits-plats/issues"
+  },
+  "homepage": "https://github.com/Foxygene/Les-petits-plats#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
