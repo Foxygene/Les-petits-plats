@@ -2,7 +2,11 @@
   "name": "lespetitsplats",
   "version": "1.0.0",
   "description": "Recipe searching website",
-  "scripts": {},
+  "scripts": {
+    "dev": "vite serve ./src",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Foxygene/Les-petits-plats.git"
@@ -18,6 +22,7 @@
   },
   "devDependencies": {
     "eslint": "^8.21.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "vite": "^3.0.7"
   }
 }
