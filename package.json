@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "eslint": "^8.21.0",
+    "postcss-load-config": "^4.0.1",
     "prettier": "^2.7.1",
     "vite": "^3.0.7"
   }

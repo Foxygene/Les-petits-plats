@@ -1,0 +1,16 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+  margin: 0 100px 0 100px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
