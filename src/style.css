@@ -26,8 +26,8 @@ header {
 }
 
 header img {
-  width: 50.48px;
-  height: 46.29px;
+  width: 58px;
+  height: 47px;
 }
 
 header h1 {
@@ -38,7 +38,11 @@ header h1 {
   color: #d04f4f;
 }
 
-header input {
+.search_box {
+  position: relative;
+}
+
+.search_box input {
   margin-top: 17px;
   height: 69px;
   background: #e7e7e7;
@@ -48,12 +52,14 @@ header input {
   font-size: 18px;
 }
 
-header input::placeholder {
+.search_box input::placeholder {
   opacity: 0.25;
   font-size: 18px;
   line-height: 22px;
 }
 
-.asdasd {
-  color: #d04f4f;
+.search_box img {
+  position: absolute;
+  top: 34px;
+  right: 20px;
 }
