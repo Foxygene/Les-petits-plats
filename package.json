@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Recipe searching website",
   "scripts": {
-    "dev": "vite serve ./src",
-    "build": "vite build",
+    "dev": "vite serve src",
+    "build": "vite build src",
     "preview": "vite preview"
   },
   "repository": {
@@ -22,7 +22,6 @@
     "@typescript-eslint/parser": "^5.33.1",
     "eslint": "^8.21.0",
     "postcss": "^8.4.16",
-    "postcss-modules": "^5.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
     "vite": "^3.0.7"
