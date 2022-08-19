@@ -20,6 +20,5 @@
     "noUncheckedIndexedAccess": true,
     "incremental": true
   },
-  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
