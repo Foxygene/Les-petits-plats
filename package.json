@@ -17,9 +17,6 @@
     "url": "https://github.com/Foxygene/Les-petits-plats/issues"
   },
   "homepage": "https://github.com/Foxygene/Les-petits-plats#readme",
-  "dependencies": {
-    "bootstrap": "^5.2.0"
-  },
   "devDependencies": {
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
