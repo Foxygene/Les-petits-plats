@@ -1,3 +1,6 @@
+import { header } from './components/header/header';
 import { recipes } from './data/recipes.js';
 
-console.log(recipes);
+document.body.innerHTML = `<main">
+  ${header()}
+</main>`;
