@@ -1,10 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+input {
+  border: none;
+}
+
 body {
   margin: 0 100px 0 100px;
+  font-family: 'Lato', sans-serif;
 }
 
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  margin-top: 42px;
+}
+
+header img {
+  width: 50.48px;
+  height: 46.29px;
+}
+
+header h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 36px;
+  line-height: 46.87px;
+  margin: 0;
+  color: #d04f4f;
+}
+
+header input {
+  margin-top: 17px;
+  height: 69px;
+  background: #e7e7e7;
+  border-radius: 5px;
+  padding: 23px 24px 24px 24px;
+  width: 100%;
+  font-size: 18px;
+}
+
+header input::placeholder {
+  opacity: 0.25;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.asdasd {
+  color: #d04f4f;
 }
