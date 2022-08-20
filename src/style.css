@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&display=swap');
 
+:root {
+  --blue: #3282f7;
+  --green: #68d9a4;
+  --red: #ed6454;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -62,4 +68,46 @@ header h1 {
   position: absolute;
   top: 34px;
   right: 20px;
+}
+
+.dropdowns_container {
+  display: flex;
+}
+
+.dropdown_search {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  margin-right: 20px;
+  height: 69px;
+  width: 170px;
+  border-radius: 5px;
+}
+
+.dropdown_search input {
+  background: none;
+  width: 160px;
+  padding: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.bg_blue {
+  background: var(--blue);
+}
+
+.bg_green {
+  background: var(--green);
+}
+
+.bg_red {
+  background: var(--red);
+}
+
+.dropdown_search img {
+  position: absolute;
+  right: 10px;
+  top: 30px;
 }
