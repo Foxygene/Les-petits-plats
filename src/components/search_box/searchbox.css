@@ -1,0 +1,29 @@
+input {
+  border: none;
+}
+
+.search_box {
+  position: relative;
+}
+
+.search_box input {
+  margin-top: 17px;
+  height: 69px;
+  background: #e7e7e7;
+  border-radius: 5px;
+  padding: 23px 70px 24px 24px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.search_box input::placeholder {
+  opacity: 0.25;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.search_box img {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+}

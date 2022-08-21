@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+}
+
+header img {
+  width: 58px;
+  height: 47px;
+}
+
+header h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 36px;
+  line-height: 46.87px;
+  margin: 0;
+  color: #d04f4f;
+}
