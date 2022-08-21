@@ -1,0 +1,92 @@
+p {
+  margin: 0;
+}
+
+.card {
+  width: 380px;
+  height: 364px;
+  border-radius: 5px;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.image_container {
+  height: 178px;
+  background: #c7bebe;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.recipes_container {
+  padding: 20px;
+  background: #e7e7e7;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.nameandtime,
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}
+
+.time {
+  min-width: 86px;
+}
+
+.time img {
+  height: 20px;
+  width: 20px;
+}
+
+.time span {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.recipe {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.ingredients {
+  width: 171px;
+}
+
+.ingredients p,
+.ingredients p span {
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ingredients p span {
+  font-weight: 700;
+}
+
+.description {
+  margin-left: 10px;
+  display: -webkit-box;
+  font-family: 'Roboto';
+  font-size: 12px;
+  width: 171px;
+  height: 109px;
+  line-height: 1;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
