@@ -2,10 +2,7 @@ import { dropdownSearch } from './components/dropdown_search/dropdownsearch';
 import { header } from './components/header/header';
 import { recipesCard } from './components/recipes_card/recipescard';
 import { searchBox } from './components/search_box/searchbox';
-import { recipes } from './data/recipes.js';
-import type { Recipe } from './type/recipe';
-
-const recipeList = recipes as Recipe[];
+import { recipes } from './data/recipes';
 
 document.body.innerHTML =
   /*html*/
@@ -18,8 +15,6 @@ document.body.innerHTML =
     ${dropdownSearch('Ustensiles', 'bg_red')}
   </div>
   <div class="cards_container">
-    ${recipeList
-      .map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description))
-      .join('')}
+    ${recipes.map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description)).join('')}
   </div>
 </main>`;

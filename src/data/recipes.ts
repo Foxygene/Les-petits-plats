@@ -1,3 +1,5 @@
+import type { Recipe } from '../type/recipes';
+
 export const recipes = [
   {
     id: 1,
@@ -1774,4 +1776,4 @@ export const recipes = [
     appliance: 'Four',
     ustensils: ['rouleau à patisserie', 'fouet'],
   },
-];
+] as Recipe[];
