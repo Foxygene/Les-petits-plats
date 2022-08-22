@@ -1,4 +1,4 @@
-export const dropdownSearch = (placeholder = 'Ingredients', color = 'bg_blue', src = './arrowdownicon.svg') =>
+export const dropdownSearch = (placeholder = 'Ingredients', color = 'bg_blue', src = './arrowdownicon.svg'): string =>
   /*html*/
   `<div class="dropdown_search ${color}">
     <input placeholder="${placeholder}">

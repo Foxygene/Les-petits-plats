@@ -1,6 +1,6 @@
 import type { Ingredient } from '../../type/ingredient';
 
-export const recipesCard = (name: string, time: number, ingredients: Ingredient[], description: string) =>
+export const recipesCard = (name: string, time: number, ingredients: Ingredient[], description: string): string =>
   /*html*/
   `<div class="card">
     <div class="image_container"></div>
