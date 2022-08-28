@@ -9,6 +9,7 @@
   flex-direction: column;
   margin-top: 20px;
   margin-right: 20px;
+  position: relative;
 }
 
 .dropdown_search {
@@ -50,10 +51,13 @@
 }
 
 .dropdown_options {
+  top: 69px;
+  position: absolute;
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  border-radius: 0 0 5px 5px;
 }
 
 .dropdown_options a {
