@@ -48,6 +48,8 @@
   position: absolute;
   right: 10px;
   top: 30px;
+  rotate: 180deg;
+  transition: transform 0.1s ease-in-out;
 }
 
 .dropdown_options {
@@ -71,6 +73,10 @@
 
 .dropdown:has(input:focus) .dropdown_options {
   display: flex;
+}
+
+.dropdown:has(input:focus) .dropdown_search img {
+  transform: rotate(180deg);
 }
 
 .dropdown:has(input:focus) .dropdown_search {
