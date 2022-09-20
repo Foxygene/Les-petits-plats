@@ -5,9 +5,9 @@ import { searchBox } from './components/search_box/searchbox';
 import { recipes } from './data/recipes';
 import { getNoDuplicate } from './utils';
 
-const ingredientList = getNoDuplicate(recipes);
-
-console.log(ingredientList);
+const ingredientList = getNoDuplicate('ingredient', recipes);
+const applianceList = getNoDuplicate('appliance', recipes);
+const ustensilsList =getNoDuplicate('ustensils', recipes);
 
 document.body.innerHTML =
   /*html*/
@@ -16,8 +16,8 @@ document.body.innerHTML =
   ${searchBox()}
   <div class="dropdowns_container">
     ${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
-    ${dropdownSearch('Appareils', 'bg_green', ingredientList)}
-    ${dropdownSearch('Ustensiles', 'bg_red', ingredientList)}
+    ${dropdownSearch('Appareils', 'bg_green', applianceList)}
+    ${dropdownSearch('Ustensiles', 'bg_red', ustensilsList)}
   </div>
   <div class="cards_container">
     ${recipes.map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description)).join('')}
