@@ -26,10 +26,18 @@
   background: none;
   width: 160px;
   padding: 24px;
+  color: #ffffff;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
+}
+
+.dropdown_search input::placeholder {
   color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 0.5;
 }
 
 .bg_blue {
