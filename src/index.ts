@@ -15,6 +15,11 @@ document.body.innerHTML =
   ${header()}
   ${searchBox()}
   <div class="dropdowns_container">
+    <div classs="filter_box">
+      <div class="ing_filter"></div>
+      <div class="appl_filter"></div>
+      <div class="ust_filter"></div>
+    </div>
     ${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
     ${dropdownSearch('Appareils', 'bg_green', applianceList)}
     ${dropdownSearch('Ustensiles', 'bg_red', ustensilsList)}
