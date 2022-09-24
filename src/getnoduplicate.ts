@@ -2,14 +2,14 @@ import type { Ingredient } from './type/ingredient';
 import type { Recipe } from './type/recipes';
 
 export const getNoDuplicate = (type: string, recipes: Recipe[]): Ingredient[] => {
-  const isUnique: Array<string> = [];
+  const noDuplicate: Array<string> = [];
   if (type === 'ingredient') {
   recipes.forEach((recipe) => {
     recipe.ingredients.filter((element) => {
-      const isDuplicate = isUnique.includes(element.ingredient);
+      const isDuplicate = noDuplicate.includes(element.ingredient);
 
       if (!isDuplicate) {
-        isUnique.push(element.ingredient);
+        noDuplicate.push(element.ingredient);
 
         return true;
       }
@@ -19,19 +19,19 @@ export const getNoDuplicate = (type: string, recipes: Recipe[]): Ingredient[] =>
 
   if (type === 'appliance') {
     recipes.forEach((recipes) => {
-      const isDuplicate = isUnique.includes(recipes.appliance);
+      const isDuplicate = noDuplicate.includes(recipes.appliance);
 
-      if (!isDuplicate) isUnique.push(recipes.appliance);
+      if (!isDuplicate) noDuplicate.push(recipes.appliance);
     })
   }
 
   if (type === 'ustensils') {
     recipes.forEach((recipe) => {
       recipe.ustensils.filter((element) => {
-        const isDuplicate = isUnique.includes(element);
+        const isDuplicate = noDuplicate.includes(element);
   
         if (!isDuplicate) {
-          isUnique.push(element);
+          noDuplicate.push(element);
   
           return true;
         }
@@ -40,5 +40,5 @@ export const getNoDuplicate = (type: string, recipes: Recipe[]): Ingredient[] =>
     });
   }
 
-  return isUnique;
+  return noDuplicate;
 };
