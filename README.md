@@ -2,7 +2,7 @@
 
 ## What is "Les petits plats"
 
-FishEye is my fith web project and my first time making and multiway filter system.
+Les petits plats is my fith web project and my first time making and multiway filter system.
 
 It's a fictionnal recepies website.
 
