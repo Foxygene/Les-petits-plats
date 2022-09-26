@@ -1,5 +1,5 @@
-import type { Ingredient } from './type/ingredient';
-import type { Recipe } from './type/recipes';
+import type { Ingredient } from '../type/ingredient';
+import type { Recipe } from '../type/recipes';
 
 export const getNoDuplicate = (type: string, recipes: Recipe[]): Ingredient[] => {
   const noDuplicate: Array<string> = [];
