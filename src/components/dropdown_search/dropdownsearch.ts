@@ -1,7 +1,9 @@
+import type { Ingredient } from "../../type/ingredient";
+
 export const dropdownSearch = (
   placeholder = 'Items',
   color = 'bg_blue',
-  options: string[],
+  options: Ingredient[],
   src = './arrowdownicon.svg'
 ): string =>
   /*html*/
