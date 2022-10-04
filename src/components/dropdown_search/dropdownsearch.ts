@@ -13,6 +13,6 @@ export const dropdownSearch = (
       <img src="${src}">
     </div>
     <div class="dropdown_options ${color}">
-      ${options.map((item) => /*html*/ `<a>${item}</a>`).join('')}
+      ${options.map((item) => /*html*/ `<a class="option">${item}</a>`).join('')}
     </div>
   </div>`;
