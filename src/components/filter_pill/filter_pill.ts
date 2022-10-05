@@ -4,11 +4,14 @@ export const filterPill = (text: string, color: string):void => {
     const pill = document.createElement('div');
     pill.classList.add('pill');
     pill.classList.add(color);
-    pill.innerHTML =
-    /*html*/
-    `<span>${text}</span>
-     <button>
-     </button>`
-     
+
+    const pillText = document.createElement('span');
+    pillText.textContent = text;
+
+    const pillButton = document.createElement('button');
+    pillButton.addEventListener('click', () => pill.remove())
+
+    pill.append(pillText, pillButton)
+
      filterBox?.append(pill);
 }
