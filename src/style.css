@@ -2,6 +2,7 @@
 
 @import url('./components/header/header.css');
 @import url('./components/search_box/searchbox.css');
+@import url('./components/filter_pill/filter_pill.css');
 @import url('./components/dropdown_search/dropdownsearch.css');
 @import url('./components/recipes_card/recipescard.css');
 
