@@ -16,9 +16,6 @@ document.body.innerHTML =
   ${searchBox()}
   <div class="dropdowns_container">
     <div classs="filter_box">
-      <div class="ing_filter"></div>
-      <div class="appl_filter"></div>
-      <div class="ust_filter"></div>
     </div>
     ${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
     ${dropdownSearch('Appareils', 'bg_green', applianceList)}
@@ -28,3 +25,7 @@ document.body.innerHTML =
     ${recipes.map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description)).join('')}
   </div>
 </main>`;
+
+const test = document.querySelectorAll('.option');
+
+test.forEach((element) => {console.log(element)})
