@@ -1,4 +1,5 @@
 import { dropdownSearch } from './components/dropdown_search/dropdownsearch';
+import { filterPill } from './components/filter_pill/filter_pill';
 import { header } from './components/header/header';
 import { recipesCard } from './components/recipes_card/recipescard';
 import { searchBox } from './components/search_box/searchbox';
@@ -14,9 +15,9 @@ document.body.innerHTML =
   `<main>
   ${header()}
   ${searchBox()}
+  <div id="filter_box">
+  </div>
   <div class="dropdowns_container">
-    <div classs="filter_box">
-    </div>
     ${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
     ${dropdownSearch('Appareils', 'bg_green', applianceList)}
     ${dropdownSearch('Ustensiles', 'bg_red', ustensilsList)}
@@ -26,6 +27,4 @@ document.body.innerHTML =
   </div>
 </main>`;
 
-const test = document.querySelectorAll('.option');
-
-test.forEach((element) => {console.log(element)})
+filterPill('Ahbahouialors', 'bg_red');
