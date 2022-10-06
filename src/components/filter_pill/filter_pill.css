@@ -1,3 +1,8 @@
+.filter_box {
+    display:flex;
+    gap: 20px;
+}
+
 .pill {
     display: flex;
     justify-content: space-between;
@@ -17,4 +22,13 @@
     letter-spacing: 0em;
     color: #FFFFFF;
     margin-right: 15px;
+}
+
+.pill button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
