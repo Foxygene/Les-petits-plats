@@ -70,13 +70,31 @@
   border-radius: 0 0 5px 5px;
 }
 
-.dropdown_options a {
+.dropdown_options button {
   padding: 5px;
   width: 33%;
   color: #ffffff;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 0;
+}
+
+.dropdown_options button:after {
+  display: block;
+  content: '';
+  border-bottom: solid 1.5px #ffffff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.dropdown_options button:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0% 50%;
 }
 
 .dropdown:has(input:focus) .dropdown_options {
