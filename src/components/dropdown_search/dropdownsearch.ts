@@ -1,4 +1,4 @@
-import type { Ingredient } from "../../type/ingredient";
+import type { Ingredient } from '../../type/ingredient';
 
 export const dropdownSearch = (
   placeholder = 'Items',
@@ -13,6 +13,6 @@ export const dropdownSearch = (
       <img src="${src}">
     </div>
     <div class="dropdown_options ${color}">
-      ${options.map((item) => /*html*/ `<a class="option">${item}</a>`).join('')}
+      ${options.map((item) => /*html*/ `<button class="option">${item}</button>`).join('')}
     </div>
   </div>`;
