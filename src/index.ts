@@ -1,6 +1,5 @@
 import { dropdownSearch } from './components/dropdown_search/dropdownsearch';
-import { filterPill } from './components/filter_pill/filter_pill';
-import { usePill } from './components/filter_pill/use_pill';
+import { useDropdown } from './components/dropdown_search/usedropdown';
 import { header } from './components/header/header';
 import { recipesCard } from './components/recipes_card/recipescard';
 import { searchBox } from './components/search_box/searchbox';
@@ -17,8 +16,6 @@ document.body.innerHTML =
   ${header()}
   ${searchBox()}
   <div class="filter_box">
-    ${filterPill('Ahbahouialors', 'bg_red')}
-    ${filterPill('Ahbahnonalors', 'bg_blue')}
   </div>
   <div class="dropdowns_container">
     ${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
@@ -30,4 +27,4 @@ document.body.innerHTML =
   </div>
 </main>`;
 
-usePill(document.querySelector<HTMLDivElement>('.filter_box')!);
+useDropdown(document.querySelector<HTMLDivElement>('.filter_box')!);
