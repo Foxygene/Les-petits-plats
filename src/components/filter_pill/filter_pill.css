@@ -1,34 +1,37 @@
 .filter_box {
-    display:flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .pill {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 37px;
-    border-radius: 5px;
-    width: min-content;
-    margin-top: 15px;
-    padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 37px;
+  border-radius: 5px;
+  width: min-content;
+  margin-top: 15px;
+  padding: 15px;
 }
 
 .pill span {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
-    letter-spacing: 0em;
-    color: #FFFFFF;
-    margin-right: 15px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #ffffff;
+  margin-right: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .pill button {
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
