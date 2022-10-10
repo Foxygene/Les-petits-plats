@@ -6,7 +6,6 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
 
   options.forEach((option) => {
     option.addEventListener('click', () => {
-      console.log(option.innerHTML);
       filterBox.innerHTML = filterBox.innerHTML + filterPill(option.innerHTML, option.parentElement?.classList[1]);
       usePill(document.querySelector<HTMLDivElement>('.filter_box')!);
     });
