@@ -1,1 +1,1 @@
-export type filterListByType = [Ingredients[], Appliance[], Usetensils[]];
+export type filterListByType = [string[], string[], string[]];
