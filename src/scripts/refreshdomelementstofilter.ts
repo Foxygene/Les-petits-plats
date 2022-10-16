@@ -1,14 +1,27 @@
+import { dropdownSearch } from '../components/dropdown_search/dropdownsearch';
+import { useDropdown } from '../components/dropdown_search/usedropdown';
 import { recipesCard } from '../components/recipes_card/recipescard';
 import { gatherFilter } from './gatherfilter';
 import { filterRecipes } from './getfiltereddata';
+import { getNoDuplicate } from './getnoduplicate';
 
 export const refreshDOMelementsToFilter = (): void => {
   const activeFilters = gatherFilter();
   const filteredData = filterRecipes(activeFilters);
 
-  const mediaCards = document.querySelector<HTMLDivElement>('.cards_container');
-
-  mediaCards!.innerHTML = filteredData
+  const mediaCardsContainer = document.querySelector<HTMLDivElement>('.cards_container');
+  mediaCardsContainer!.innerHTML = filteredData
     .map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description))
     .join('');
+
+  const dropdownsContainer = document.querySelector('.dropdowns_container');
+  const ingredientList = getNoDuplicate('ingredient', filteredData);
+  const applianceList = getNoDuplicate('appliance', filteredData);
+  const ustensilsList = getNoDuplicate('ustensils', filteredData);
+
+  dropdownsContainer!.innerHTML = `${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
+  ${dropdownSearch('Appareils', 'bg_green', applianceList)}
+  ${dropdownSearch('Ustensiles', 'bg_red', ustensilsList)}`;
+
+  useDropdown(document.querySelector<HTMLDivElement>('.filter_box')!);
 };
