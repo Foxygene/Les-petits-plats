@@ -12,7 +12,7 @@ export const filterRecipes = (activeFilters: filterListByType): Recipe[] => {
 
   if (ustensilsFilter.length !== 0)
     updatedRecipes = updatedRecipes.filter((recipe) =>
-      ustensilsFilter.ev((ustensil) => recipe.ustensils.includes(ustensil))
+      ustensilsFilter.every((ustensil) => recipe.ustensils.includes(ustensil))
     );
 
   if (ingredientsFilter.length !== 0)
