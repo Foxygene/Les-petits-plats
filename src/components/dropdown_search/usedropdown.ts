@@ -23,8 +23,6 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
 
         optionContainer.innerHTML = searchList;
       }
-      // console.log(event.path[1].nextElementSibling);
-      // console.log(event.path[1].classList[1]);
     })
   );
 
