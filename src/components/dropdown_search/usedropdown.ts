@@ -18,11 +18,42 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
       if (event.path[1].classList[1] === 'bg_blue') {
         const ingredientList = getNoDuplicate('ingredient', filteredData);
 
-        const searchList = ingredientList.filter((option) => event.srcElement.value.includes(option));
-        console.log(searchList);
+        const searchList = ingredientList.filter((option) => option.includes(event.target.value));
 
-        optionContainer.innerHTML = searchList;
+        optionContainer.innerHTML = searchList
+          .map((item) => /*html*/ `<button class="option">${item}</button>`)
+          .join('');
       }
+
+      if (event.path[1].classList[1] === 'bg_green') {
+        const applianceList = getNoDuplicate('appliance', filteredData);
+
+        const searchList = applianceList.filter((option) => option.includes(event.target.value));
+
+        optionContainer.innerHTML = searchList
+          .map((item) => /*html*/ `<button class="option">${item}</button>`)
+          .join('');
+      }
+
+      if (event.path[1].classList[1] === 'bg_red') {
+        const ustensilsList = getNoDuplicate('ustensils', filteredData);
+
+        const searchList = ustensilsList.filter((option) => option.includes(event.target.value));
+
+        optionContainer.innerHTML = searchList
+          .map((item) => /*html*/ `<button class="option">${item}</button>`)
+          .join('');
+      }
+
+      const newOptions = optionContainer.querySelectorAll('.option');
+
+      newOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          filterBox.innerHTML = filterBox.innerHTML + filterPill(option.innerHTML, option.parentElement?.classList[1]);
+          usePill(document.querySelector<HTMLDivElement>('.filter_box')!);
+          refreshDOMelementsToFilter();
+        });
+      });
     })
   );
 
