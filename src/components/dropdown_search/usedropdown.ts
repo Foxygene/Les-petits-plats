@@ -18,7 +18,12 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
       if (event.path[1].classList[1] === 'bg_blue') {
         const ingredientList = getNoDuplicate('ingredient', filteredData);
 
-        const searchList = ingredientList.filter((option) => option.includes(event.target.value));
+        const searchList = ingredientList.filter((option) => {
+          const optionUpCase = option.toUpperCase();
+          const inputValueUpCase = event.target.value.toUpperCase();
+
+          return optionUpCase.includes(inputValueUpCase);
+        });
 
         optionContainer.innerHTML = searchList
           .map((item) => /*html*/ `<button class="option">${item}</button>`)
@@ -28,7 +33,12 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
       if (event.path[1].classList[1] === 'bg_green') {
         const applianceList = getNoDuplicate('appliance', filteredData);
 
-        const searchList = applianceList.filter((option) => option.includes(event.target.value));
+        const searchList = applianceList.filter((option) => {
+          const optionUpCase = option.toUpperCase();
+          const inputValueUpCase = event.target.value.toUpperCase();
+
+          return optionUpCase.includes(inputValueUpCase);
+        });
 
         optionContainer.innerHTML = searchList
           .map((item) => /*html*/ `<button class="option">${item}</button>`)
@@ -38,8 +48,12 @@ export const useDropdown = (filterBox: HTMLDivElement): void => {
       if (event.path[1].classList[1] === 'bg_red') {
         const ustensilsList = getNoDuplicate('ustensils', filteredData);
 
-        const searchList = ustensilsList.filter((option) => option.includes(event.target.value));
+        const searchList = ustensilsList.filter((option) => {
+          const optionUpCase = option.toUpperCase();
+          const inputValueUpCase = event.target.value.toUpperCase();
 
+          return optionUpCase.includes(inputValueUpCase);
+        });
         optionContainer.innerHTML = searchList
           .map((item) => /*html*/ `<button class="option">${item}</button>`)
           .join('');
