@@ -3,6 +3,7 @@ import { useDropdown } from './components/dropdown_search/usedropdown';
 import { header } from './components/header/header';
 import { recipesCard } from './components/recipes_card/recipescard';
 import { searchBox } from './components/search_box/searchbox';
+import { useSearchBox } from './components/search_box/usesearchbox';
 import { recipes } from './data/recipes';
 import { getNoDuplicate } from './scripts/getnoduplicate';
 
@@ -27,4 +28,5 @@ document.body.innerHTML =
   </div>
 </main>`;
 
+useSearchBox(document.querySelector<HTMLDivElement>('.search_box')!);
 useDropdown(document.querySelector<HTMLDivElement>('.filter_box')!);
