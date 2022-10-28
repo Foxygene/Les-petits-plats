@@ -9,7 +9,7 @@ export const refreshDOMelementsToFilter = (mainSearchInput: string): void => {
   const activeFilters = gatherFilter();
   let filteredData = filterRecipes(activeFilters);
 
-  if (mainSearchInput !== null) {
+  if (mainSearchInput != null) {
     filteredData = filteredData.filter((recipe) => {
       const inputSearch = mainSearchInput.toUpperCase();
       const recipeName = recipe.name.toUpperCase();
