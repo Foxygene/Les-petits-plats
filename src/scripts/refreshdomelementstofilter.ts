@@ -5,9 +5,24 @@ import { gatherFilter } from './gatherfilter';
 import { filterRecipes } from './getfiltereddata';
 import { getNoDuplicate } from './getnoduplicate';
 
-export const refreshDOMelementsToFilter = (): void => {
+export const refreshDOMelementsToFilter = (mainSearchInput): void => {
   const activeFilters = gatherFilter();
-  const filteredData = filterRecipes(activeFilters);
+  let filteredData = filterRecipes(activeFilters);
+
+  if (mainSearchInput !== null) {
+    filteredData = filteredData.filter((recipe) => {
+      const inputSearch = mainSearchInput.toUpperCase();
+      const recipeName = recipe.name.toUpperCase();
+      const recipeDescription = recipe.description.toUpperCase();
+      const recipeIngredients = recipe.ingredients;
+
+      return (
+        recipeName.includes(inputSearch) ||
+        recipeDescription.includes(inputSearch) ||
+        recipeIngredients.some((recipe) => recipe.ingredient.includes(inputSearch))
+      );
+    });
+  }
 
   const mediaCardsContainer = document.querySelector<HTMLDivElement>('.cards_container');
   mediaCardsContainer!.innerHTML = filteredData
