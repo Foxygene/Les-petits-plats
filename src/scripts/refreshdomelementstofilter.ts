@@ -5,7 +5,7 @@ import { gatherFilter } from './gatherfilter';
 import { filterRecipes } from './getfiltereddata';
 import { getNoDuplicate } from './getnoduplicate';
 
-export const refreshDOMelementsToFilter = (mainSearchInput): void => {
+export const refreshDOMelementsToFilter = (mainSearchInput: string): void => {
   const activeFilters = gatherFilter();
   let filteredData = filterRecipes(activeFilters);
 
