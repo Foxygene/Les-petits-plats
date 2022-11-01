@@ -29,4 +29,7 @@ document.body.innerHTML =
 </main>`;
 
 useSearchBox(document.querySelector<HTMLDivElement>('.search_box')!);
-useDropdown(document.querySelector<HTMLDivElement>('.filter_box')!);
+useDropdown(
+  document.querySelector<HTMLDivElement>('.dropdowns_container')!,
+  document.querySelector<HTMLDivElement>('.filter_box')!
+);

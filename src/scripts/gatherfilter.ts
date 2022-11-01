@@ -1,16 +1,19 @@
 import type { filterListByType } from '../type/filterlistbytype';
 
-export const gatherFilter = (): filterListByType => {
+export const getActiveFilters = (): filterListByType => {
   const pills = document.querySelectorAll('.pill');
 
-  const ingredientList = [];
-  const applianceList = [];
-  const ustensilsList = [];
+  const ingredientList: string[] = [];
+  const applianceList: string[] = [];
+  const ustensilsList: string[] = [];
 
   pills.forEach((pill) => {
-    if (pill.classList[1] === 'bg_blue') ingredientList.push(pill.firstElementChild?.innerHTML);
-    if (pill.classList[1] === 'bg_green') applianceList.push(pill.firstElementChild?.innerHTML);
-    if (pill.classList[1] === 'bg_red') ustensilsList.push(pill.firstElementChild?.innerHTML);
+    const pillText = pill.firstElementChild?.innerHTML;
+    if (pillText === undefined) throw Error('Pill text is undefined');
+
+    if (pill.classList.contains('bg_blue')) ingredientList.push(pillText);
+    if (pill.classList.contains('bg_green')) applianceList.push(pillText);
+    if (pill.classList.contains('bg_red')) ustensilsList.push(pillText);
   });
 
   return [ingredientList, applianceList, ustensilsList];

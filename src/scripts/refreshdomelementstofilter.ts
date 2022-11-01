@@ -1,12 +1,16 @@
 import { dropdownSearch } from '../components/dropdown_search/dropdownsearch';
 import { useDropdown } from '../components/dropdown_search/usedropdown';
 import { recipesCard } from '../components/recipes_card/recipescard';
-import { gatherFilter } from './gatherfilter';
+import { getActiveFilters } from './gatherfilter';
 import { filterRecipes } from './getfiltereddata';
 import { getNoDuplicate } from './getnoduplicate';
 
-export const refreshDOMelementsToFilter = (mainSearchInput: string): void => {
-  const activeFilters = gatherFilter();
+export const refreshDOMelementsToFilter = (): void => {
+  const mainSearchContainer = document.querySelector('.search_box') as HTMLDivElement;
+  const mainSearchBar = mainSearchContainer.querySelector('input') as HTMLInputElement;
+  const mainSearchInput = mainSearchBar.value;
+
+  const activeFilters = getActiveFilters();
   let filteredData = filterRecipes(activeFilters);
 
   if (mainSearchInput != null) {
@@ -38,5 +42,8 @@ export const refreshDOMelementsToFilter = (mainSearchInput: string): void => {
   ${dropdownSearch('Appareils', 'bg_green', applianceList)}
   ${dropdownSearch('Ustensiles', 'bg_red', ustensilsList)}`;
 
-  useDropdown(document.querySelector<HTMLDivElement>('.filter_box')!);
+  useDropdown(
+    document.querySelector<HTMLDivElement>('.dropdowns_container')!,
+    document.querySelector<HTMLDivElement>('.filter_box')!
+  );
 };

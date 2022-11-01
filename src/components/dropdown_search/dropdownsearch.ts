@@ -1,6 +1,4 @@
-import type { Ingredient } from '../../type/ingredient';
-
-export const dropdownSearch = (placeholder: string, color: string, options: Ingredient[]): string =>
+export const dropdownSearch = (placeholder: string, color: string, options: string[]): string =>
   /*html*/
   `<div class="dropdown">
     <div class="dropdown_search ${color}">
