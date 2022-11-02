@@ -40,7 +40,7 @@ export const refreshDOMelementsToFilter = (): void => {
   let applianceList = getNoDuplicate('appliance', filteredData);
   applianceList = pullOutActiveFilter(applianceList, activeFilters[1]);
   let ustensilsList = getNoDuplicate('ustensils', filteredData);
-  ustensilsList = pullOutActiveFilter(applianceList, activeFilters[2]);
+  ustensilsList = pullOutActiveFilter(ustensilsList, activeFilters[2]);
 
   dropdownsContainer!.innerHTML = `${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
   ${dropdownSearch('Appareils', 'bg_green', applianceList)}

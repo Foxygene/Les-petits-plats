@@ -40,7 +40,7 @@ export const useDropdown = (dropdownContainer: HTMLDivElement, filterBox: HTMLDi
         optionsContent = pullOutActiveFilter(optionsContent, activeFilters[1]);
       }
       if (color === 'bg_red') {
-        optionsContent = getNoDuplicate('ustensil', filteredData);
+        optionsContent = getNoDuplicate('ustensils', filteredData);
         optionsContent = pullOutActiveFilter(optionsContent, activeFilters[2]);
       }
 
