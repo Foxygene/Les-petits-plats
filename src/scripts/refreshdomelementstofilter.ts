@@ -50,4 +50,8 @@ export const refreshDOMelementsToFilter = (): void => {
     document.querySelector<HTMLDivElement>('.dropdowns_container')!,
     document.querySelector<HTMLDivElement>('.filter_box')!
   );
+
+  if (mediaCardsContainer?.firstElementChild === null) {
+    mediaCardsContainer.innerHTML = /*html*/ `<p class='error_message'>Aucunes recettes ne correspond à votre recherche.</p>`;
+  }
 };

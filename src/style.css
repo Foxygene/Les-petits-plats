@@ -29,3 +29,11 @@ body {
   flex-wrap: wrap;
   padding-bottom: 50px;
 }
+
+.error_message {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 0.5;
+  margin-top: 25px;
+}
