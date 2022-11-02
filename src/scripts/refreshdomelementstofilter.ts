@@ -4,6 +4,7 @@ import { recipesCard } from '../components/recipes_card/recipescard';
 import { getActiveFilters } from './gatherfilter';
 import { filterRecipes } from './getfiltereddata';
 import { getNoDuplicate } from './getnoduplicate';
+import { pullOutActiveFilter } from './pulloutactivefilter';
 
 export const refreshDOMelementsToFilter = (): void => {
   const mainSearchContainer = document.querySelector('.search_box') as HTMLDivElement;
@@ -34,9 +35,12 @@ export const refreshDOMelementsToFilter = (): void => {
     .join('');
 
   const dropdownsContainer = document.querySelector('.dropdowns_container');
-  const ingredientList = getNoDuplicate('ingredient', filteredData);
-  const applianceList = getNoDuplicate('appliance', filteredData);
-  const ustensilsList = getNoDuplicate('ustensils', filteredData);
+  let ingredientList = getNoDuplicate('ingredient', filteredData);
+  ingredientList = pullOutActiveFilter(ingredientList, activeFilters[0]);
+  let applianceList = getNoDuplicate('appliance', filteredData);
+  applianceList = pullOutActiveFilter(applianceList, activeFilters[1]);
+  let ustensilsList = getNoDuplicate('ustensils', filteredData);
+  ustensilsList = pullOutActiveFilter(applianceList, activeFilters[2]);
 
   dropdownsContainer!.innerHTML = `${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
   ${dropdownSearch('Appareils', 'bg_green', applianceList)}

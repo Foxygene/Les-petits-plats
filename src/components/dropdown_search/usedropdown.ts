@@ -1,6 +1,7 @@
 import { getActiveFilters } from '../../scripts/gatherfilter';
 import { filterRecipes } from '../../scripts/getfiltereddata';
 import { getNoDuplicate } from '../../scripts/getnoduplicate';
+import { pullOutActiveFilter } from '../../scripts/pulloutactivefilter';
 import { refreshDOMelementsToFilter } from '../../scripts/refreshdomelementstofilter';
 import { filterPill } from '../filter_pill/filter_pill';
 import { usePill } from '../filter_pill/use_pill';
@@ -30,9 +31,18 @@ export const useDropdown = (dropdownContainer: HTMLDivElement, filterBox: HTMLDi
       const filteredData = filterRecipes(activeFilters);
 
       let optionsContent: string[] = [];
-      if (color === 'bg_blue') optionsContent = getNoDuplicate('ingredient', filteredData);
-      if (color === 'bg_green') optionsContent = getNoDuplicate('appliance', filteredData);
-      if (color === 'bg_red') optionsContent = getNoDuplicate('ustensil', filteredData);
+      if (color === 'bg_blue') {
+        optionsContent = getNoDuplicate('ingredient', filteredData);
+        optionsContent = pullOutActiveFilter(optionsContent, activeFilters[0]);
+      }
+      if (color === 'bg_green') {
+        optionsContent = getNoDuplicate('appliance', filteredData);
+        optionsContent = pullOutActiveFilter(optionsContent, activeFilters[1]);
+      }
+      if (color === 'bg_red') {
+        optionsContent = getNoDuplicate('ustensil', filteredData);
+        optionsContent = pullOutActiveFilter(optionsContent, activeFilters[2]);
+      }
 
       optionContainer.innerHTML = optionsContent
         .filter((option) => option.toUpperCase().includes(searchInput.value.toUpperCase()))
