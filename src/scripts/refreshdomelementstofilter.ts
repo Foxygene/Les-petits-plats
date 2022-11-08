@@ -12,46 +12,45 @@ export const refreshDOMelementsToFilter = (): void => {
   const mainSearchInput = mainSearchBar.value;
 
   const activeFilters = getActiveFilters();
-  let filteredData = filterRecipes(activeFilters);
-  const filteredData2 = filteredData;
+  const filteredData = filterRecipes(activeFilters);
   const inputSearch = mainSearchInput.toUpperCase();
+  const filteredDataWithInput = [];
 
   if (mainSearchInput != null) {
     console.time(inputSearch);
-    const filteredDataWithInput = [];
 
-    for (let i = 0; i < filteredData2.length; i++) {
+    for (let i = 0; i < filteredData.length; i++) {
       let validateRecipe = false;
       if (
-        filteredData2[i]?.name.toUpperCase().includes(inputSearch) ||
-        filteredData2[i]?.description.toUpperCase().includes(inputSearch)
+        filteredData[i]?.name.toUpperCase().includes(inputSearch) ||
+        filteredData[i]?.description.toUpperCase().includes(inputSearch)
       ) {
         validateRecipe = true;
       }
-      for (let j = 0; j < filteredData2[i]!.ingredients.length; j++) {
-        const ingredient = filteredData2[i]?.ingredients[j]?.ingredient;
+      for (let j = 0; j < filteredData[i]!.ingredients.length; j++) {
+        const ingredient = filteredData[i]?.ingredients[j]?.ingredient;
         if (ingredient?.toUpperCase().includes(inputSearch)) {
           validateRecipe = true;
         }
       }
-      if (validateRecipe) {
-        filteredDataWithInput.push(filteredData2[i]);
+      if (validateRecipe === true) {
+        filteredDataWithInput.push(filteredData[i]);
       }
     }
     console.timeEnd(inputSearch);
   }
 
   const mediaCardsContainer = document.querySelector<HTMLDivElement>('.cards_container');
-  mediaCardsContainer!.innerHTML = filteredData2
+  mediaCardsContainer!.innerHTML = filteredDataWithInput
     .map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description))
     .join('');
 
   const dropdownsContainer = document.querySelector('.dropdowns_container');
-  let ingredientList = getNoDuplicate('ingredient', filteredData);
+  let ingredientList = getNoDuplicate('ingredient', filteredDataWithInput);
   ingredientList = pullOutActiveFilter(ingredientList, activeFilters[0]);
-  let applianceList = getNoDuplicate('appliance', filteredData);
+  let applianceList = getNoDuplicate('appliance', filteredDataWithInput);
   applianceList = pullOutActiveFilter(applianceList, activeFilters[1]);
-  let ustensilsList = getNoDuplicate('ustensils', filteredData);
+  let ustensilsList = getNoDuplicate('ustensils', filteredDataWithInput);
   ustensilsList = pullOutActiveFilter(ustensilsList, activeFilters[2]);
 
   dropdownsContainer!.innerHTML = `${dropdownSearch('Ingredients', 'bg_blue', ingredientList)}
