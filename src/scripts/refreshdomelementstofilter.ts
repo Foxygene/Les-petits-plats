@@ -15,6 +15,7 @@ export const refreshDOMelementsToFilter = (): void => {
   let filteredData = filterRecipes(activeFilters);
 
   if (mainSearchInput != null) {
+    console.time(mainSearchInput.toUpperCase());
     filteredData = filteredData.filter((recipe) => {
       const inputSearch = mainSearchInput.toUpperCase();
       const recipeName = recipe.name.toUpperCase();
@@ -27,6 +28,7 @@ export const refreshDOMelementsToFilter = (): void => {
         recipeIngredients.some((recipe) => recipe.ingredient.includes(inputSearch))
       );
     });
+    console.timeEnd(mainSearchInput.toUpperCase());
   }
 
   const mediaCardsContainer = document.querySelector<HTMLDivElement>('.cards_container');
