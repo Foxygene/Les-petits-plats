@@ -13,24 +13,36 @@ export const refreshDOMelementsToFilter = (): void => {
 
   const activeFilters = getActiveFilters();
   let filteredData = filterRecipes(activeFilters);
+  const filteredData2 = filteredData;
+  const inputSearch = mainSearchInput.toUpperCase();
 
   if (mainSearchInput != null) {
-    filteredData = filteredData.filter((recipe) => {
-      const inputSearch = mainSearchInput.toUpperCase();
-      const recipeName = recipe.name.toUpperCase();
-      const recipeDescription = recipe.description.toUpperCase();
-      const recipeIngredients = recipe.ingredients;
+    console.time(inputSearch);
+    const filteredDataWithInput = [];
 
-      return (
-        recipeName.includes(inputSearch) ||
-        recipeDescription.includes(inputSearch) ||
-        recipeIngredients.some((recipe) => recipe.ingredient.includes(inputSearch))
-      );
-    });
+    for (let i = 0; i < filteredData2.length; i++) {
+      let validateRecipe = false;
+      if (
+        filteredData2[i]?.name.toUpperCase().includes(inputSearch) ||
+        filteredData2[i]?.description.toUpperCase().includes(inputSearch)
+      ) {
+        validateRecipe = true;
+      }
+      for (let j = 0; j < filteredData2[i]!.ingredients.length; j++) {
+        const ingredient = filteredData2[i]?.ingredients[j]?.ingredient;
+        if (ingredient?.toUpperCase().includes(inputSearch)) {
+          validateRecipe = true;
+        }
+      }
+      if (validateRecipe) {
+        filteredDataWithInput.push(filteredData2[i]);
+      }
+    }
+    console.timeEnd(inputSearch);
   }
 
   const mediaCardsContainer = document.querySelector<HTMLDivElement>('.cards_container');
-  mediaCardsContainer!.innerHTML = filteredData
+  mediaCardsContainer!.innerHTML = filteredData2
     .map((recipe) => recipesCard(recipe.name, recipe.time, recipe.ingredients, recipe.description))
     .join('');
 
